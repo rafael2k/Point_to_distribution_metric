@@ -236,6 +236,11 @@ NormalSet::loadPoints( PccPointCloud *pPcc, long int idx )
     for (int i = 0; i < 3; i++)
       n[idx][i] = *(float*)(pPcc->lineMem.get() + pPcc->fieldPos[ idxInLine[i] ]);
   }
+  else if ( pPcc->fieldType[ idxInLine[0] ] == PccPointCloud::PointFieldTypes::FLOAT64 )
+  {
+    for (int i = 0; i < 3; i++)
+      n[idx][i] = *(double*)(pPcc->lineMem.get() + pPcc->fieldPos[ idxInLine[i] ]);
+  }
   else
   {
     cerr << "Error! Wrong xyz data type: " << pPcc->fieldType[ idxInLine[0] ] << endl;
