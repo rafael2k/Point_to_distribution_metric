@@ -48,8 +48,8 @@
 #include <sstream>
 #include <limits.h>
 
-#include <Eigen\Dense>
-#include <math.h> 
+#include <eigen3/Eigen/Dense>
+#include <math.h>
 #include <numeric>
 
 #include "pcc_processing.hpp"
